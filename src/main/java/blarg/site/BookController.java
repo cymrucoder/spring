@@ -20,12 +20,12 @@ public class BookController {
         Book book1 = new Book();
         book1.setTitle("War of the Worlds");
         book1.setAuthor("H G Wells");
-        book1.setColor("red");
+        book1.setColor("aliceblue");
         
         Book book2 = new Book();
         book2.setTitle("Of Mice and Men");
         book2.setAuthor("John Steinbeck");
-        book2.setColor("lightblue");
+        book2.setColor("whitesmoke");
         
         bookList.add(book1);
         bookList.add(book2);

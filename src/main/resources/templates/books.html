@@ -33,12 +33,25 @@
                 padding: 15px;
                 font-family: "Verdana";
             }
+            .bigdiv {
+                height: 100px;
+             }
+             .bookdiv {
+                font-family: "Verdana";
+                left: 5%;
+                color: black;
+                position: absolute;
+                margin-top: 10px;
+             }
         </style>
     </head>
     <body>
         <h1>Some books I've read</h1>
         
-        <div data-th-each="book : ${books}" data-th-text="${book.title}" data-th-style="${'background-color:' + book.color}">        </div>
+        <div class="bigdiv" data-th-each="book : ${books}" data-th-style="${'background-color:' + book.color}">
+            <div class="bookdiv" data-th-text="${book.title}">  </div>
+               
+        </div>
         
 
     </body>
