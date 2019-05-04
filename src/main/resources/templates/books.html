@@ -9,7 +9,6 @@
                 padding:0px;margin:0px;
             }
             h1 {
-                color: red;
                 font-family: "Verdana";
                 padding:0px;
                 margin:0px;
@@ -17,12 +16,30 @@
                 background-color:dimgray;
                 color: white;
             }
+            li {
+                font-family: "Verdana";
+                padding:10px;
+                margin:0px;
+                text-align:center;
+                background-color:dimgray;
+                color: white;
+            }
+            td {
+                padding: 15px;
+                font-family: "Verdana";
+                background-color: dimgray;
+            }
+            th {
+                padding: 15px;
+                font-family: "Verdana";
+            }
         </style>
     </head>
     <body>
         <h1>Some books I've read</h1>
-        <ul>
-            <li th:each="book : ${books}" th:text="${book}"></li>
-        </ul>
+        
+        <div data-th-each="book : ${books}" data-th-text="${book.title}" data-th-style="${'background-color:' + book.color}">        </div>
+        
+
     </body>
 </html>
