@@ -21,14 +21,17 @@ public class BookController {
         book1.setTitle("War of the Worlds");
         book1.setAuthor("H G Wells");
         book1.setColor("aliceblue");
+        book1.setFontColor("#696969");
         
         Book book2 = new Book();
         book2.setTitle("Of Mice and Men");
         book2.setAuthor("John Steinbeck");
         book2.setColor("whitesmoke");
+        book2.setFontColor("#67809f");
         
         bookList.add(book1);
-        bookList.add(book2);
+        bookList.add(book2);       
+        
         model.addAttribute("books", bookList);
         return "books";
     }

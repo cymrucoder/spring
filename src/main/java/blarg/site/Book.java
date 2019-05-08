@@ -9,6 +9,7 @@ public class Book {
     private String title;
     private String author;
     private String color;
+    private String fontColor;
 
     public String getTitle() {
         return title;
@@ -33,7 +34,13 @@ public class Book {
     public void setColor(String color) {
         this.color = color;
     }
-    
- 
+
+    public String getFontColor() {
+        return fontColor;
+    }
+
+    public void setFontColor(String fontColor) {
+        this.fontColor = fontColor;
+    }
 
 }

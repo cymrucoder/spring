@@ -38,10 +38,12 @@
              }
              .bookdiv {
                 font-family: "Verdana";
-                left: 5%;
+                left: 20%;
                 color: black;
                 position: absolute;
                 margin-top: 10px;
+                font-size: 200%;
+                font-weight: 700;
              }
         </style>
     </head>
@@ -49,7 +51,7 @@
         <h1>Some books I've read</h1>
         
         <div class="bigdiv" data-th-each="book : ${books}" data-th-style="${'background-color:' + book.color}">
-            <div class="bookdiv" data-th-text="${book.title}">  </div>
+            <div class="bookdiv" data-th-text="${book.title}" data-th-style="${'color:' + book.fontColor}">  </div>
                
         </div>
         
