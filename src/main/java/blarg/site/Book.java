@@ -11,6 +11,7 @@ public class Book {
     private String color;
     private String fontColor;
     private int yearPublished;
+    private String quote;
 
     public String getTitle() {
         return title;
@@ -50,6 +51,14 @@ public class Book {
 
     public void setYearPublished(int yearPublished) {
         this.yearPublished = yearPublished;
+    }
+
+    public String getQuote() {
+        return quote;
+    }
+
+    public void setQuote(String quote) {
+        this.quote = quote;
     }
 
 }

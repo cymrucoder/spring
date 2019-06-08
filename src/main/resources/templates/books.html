@@ -63,13 +63,31 @@
              }
              .infodiv.iodd {
                  float: left;
-                 right: 3%;
+                 right: 2%;
                  text-align: right;
              }
              .infodiv.ieven {
                 float: right;
-                left: 3%;
+                left: 2%;
                 text-align: left;
+             }
+             .quotediv.qodd {
+                 float: right;
+                 white-space: normal;
+                 word-wrap: break-word;
+                 position: relative;
+                 width: 600px;
+                 font-style: italic;
+                 left: 10%;
+             }
+             .quotediv.qeven {
+                 float: left;
+                 white-space: normal;
+                 word-wrap: break-word;
+                 position: relative;
+                 width: 600px;
+                 font-style: italic;
+                 right: 10%;
              }
         </style>
     </head>
@@ -83,6 +101,7 @@
                     <div data-th-text="${book.author}" data-th-style="${'color:' + book.fontColor}">  </div>
                     <div data-th-text="${book.yearPublished}" data-th-style="${'color:' + book.fontColor}">  </div>
                 </div>
+                <div class="quotediv" data-th-text="${book.quote}" data-th-style="${'color:' + book.fontColor}" data-th-classappend="|${bookStat.odd ? 'qodd' : ''}${bookStat.even ? 'qeven' : ''}|">  </div>
             </div>
                
         </div>

@@ -23,6 +23,7 @@ public class BookController {
         book1.setColor("aliceblue");
         book1.setFontColor("#696969");
         book1.setYearPublished(1897);
+        book1.setQuote("No one would have believed in the last years of the nineteenth century that this world was being watched keenly and closely by intelligences greater than man's and yet as mortal as this own.");
         
         Book book2 = new Book();
         book2.setTitle("Of Mice and Men");
@@ -30,6 +31,7 @@ public class BookController {
         book2.setColor("whitesmoke");
         book2.setFontColor("#67809f");
         book2.setYearPublished(1937);
+        book2.setQuote("Nobody never gets to heaven and nobody gets no land!");
         
         bookList.add(book1);
         bookList.add(book2);       
