@@ -52,15 +52,24 @@
                 white-space: nowrap;
                 font-size: 200%;
                 font-weight: 300;
-                float: right;
-                left: 3%;
+
              }
              
              .odd {
-                 left: 20%;
+                 left: 2%;
              }
              .even {
-                 left: 60%;
+                 right: 2%;
+             }
+             .infodiv.iodd {
+                 float: left;
+                 right: 3%;
+                 text-align: right;
+             }
+             .infodiv.ieven {
+                float: right;
+                left: 3%;
+                text-align: left;
              }
         </style>
     </head>
@@ -68,9 +77,9 @@
         <h1>Some books I've read</h1>
         
         <div class="bigdiv" data-th-each="book : ${books}" data-th-style="${'background-color:' + book.color}">
-            <div class="bookdiv" data-th-classappend="|${bookStat.odd ? 'odd' : ''} ${bookStat.even ? 'even' : ''}|">
+            <div class="bookdiv" data-th-classappend="|${bookStat.odd ? 'odd' : ''}${bookStat.even ? 'even' : ''}|">
                 <div class="titlediv" data-th-text="${book.title}" data-th-style="${'color:' + book.fontColor}"   >  </div>
-                <div class="infodiv" >
+                <div class="infodiv" data-th-classappend="|${bookStat.odd ? 'iodd' : ''}${bookStat.even ? 'ieven' : ''}|">                    
                     <div data-th-text="${book.author}" data-th-style="${'color:' + book.fontColor}">  </div>
                     <div data-th-text="${book.yearPublished}" data-th-style="${'color:' + book.fontColor}">  </div>
                 </div>
