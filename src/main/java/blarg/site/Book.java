@@ -10,6 +10,7 @@ public class Book {
     private String author;
     private String color;
     private String fontColor;
+    private int yearPublished;
 
     public String getTitle() {
         return title;
@@ -41,6 +42,14 @@ public class Book {
 
     public void setFontColor(String fontColor) {
         this.fontColor = fontColor;
+    }
+
+    public int getYearPublished() {
+        return yearPublished;
+    }
+
+    public void setYearPublished(int yearPublished) {
+        this.yearPublished = yearPublished;
     }
 
 }

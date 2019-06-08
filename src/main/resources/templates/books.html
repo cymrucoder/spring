@@ -37,13 +37,28 @@
                 height: 100px;
              }
              .bookdiv {
-                font-family: "Verdana";
+                 font-family: "Verdana";
+             }
+             .titlediv {
                 left: 20%;
                 color: black;
                 position: absolute;
                 margin-top: 10px;
-                font-size: 200%;
+                font-size: 300%;
                 font-weight: 700;
+                display: inline;
+             }
+             .infodiv {
+                left: 20%;
+                color: black;
+                position: absolute;
+                margin-top: 10px;
+                margin-left: 30%;
+                white-space: nowrap;
+                color: black;
+                position: absolute;
+                font-size: 200%;
+                font-weight: 300;
              }
         </style>
     </head>
@@ -51,7 +66,13 @@
         <h1>Some books I've read</h1>
         
         <div class="bigdiv" data-th-each="book : ${books}" data-th-style="${'background-color:' + book.color}">
-            <div class="bookdiv" data-th-text="${book.title}" data-th-style="${'color:' + book.fontColor}">  </div>
+            <div class="bookdiv">
+                <div class="titlediv" data-th-text="${book.title}" data-th-style="${'color:' + book.fontColor}">  </div>
+                <div class="infodiv">
+                    <div data-th-text="${book.author}" data-th-style="${'color:' + book.fontColor}">  </div>
+                    <div data-th-text="${book.yearPublished}" data-th-style="${'color:' + book.fontColor}">  </div>
+                </div>
+            </div>
                
         </div>
         

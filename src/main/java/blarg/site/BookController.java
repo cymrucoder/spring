@@ -22,12 +22,14 @@ public class BookController {
         book1.setAuthor("H G Wells");
         book1.setColor("aliceblue");
         book1.setFontColor("#696969");
+        book1.setYearPublished(1897);
         
         Book book2 = new Book();
         book2.setTitle("Of Mice and Men");
         book2.setAuthor("John Steinbeck");
         book2.setColor("whitesmoke");
         book2.setFontColor("#67809f");
+        book2.setYearPublished(1937);
         
         bookList.add(book1);
         bookList.add(book2);       
