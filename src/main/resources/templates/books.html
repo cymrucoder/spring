@@ -34,15 +34,17 @@
                 font-family: "Verdana";
             }
             .bigdiv {
-                height: 100px;
+                height: 120px;
              }
              .bookdiv {
                  font-family: "Verdana";
-                 position: absolute;
+                 position: relative;
+                 top: 50%;
+                 -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
              }
              .titlediv {
-                position: relative;
-                margin-top: 10px;
+                position: relative;                
                 font-size: 300%;
                 font-weight: 700;
                 display: inline-block;
@@ -52,23 +54,25 @@
                 white-space: nowrap;
                 font-size: 200%;
                 font-weight: 300;
-
+             }             
+             .titlediv.odd {
+                 left: 5%;
              }
-             
-             .odd {
-                 left: 2%;
-             }
-             .even {
-                 right: 2%;
+             .titlediv.even {
+                 left: 30%;
              }
              .infodiv.iodd {
-                 float: left;
-                 right: 2%;
-                 text-align: right;
+                 position: relative;
+                 left: 2%;
+                float: left;
+                
+                text-align: right;
              }
              .infodiv.ieven {
+                 position: relative;
+                 right: 2%;
                 float: right;
-                left: 2%;
+                
                 text-align: left;
              }
              .quotediv.qodd {
@@ -78,7 +82,7 @@
                  position: relative;
                  width: 600px;
                  font-style: italic;
-                 left: 10%;
+                 right: 10%;
              }
              .quotediv.qeven {
                  float: left;
@@ -87,7 +91,7 @@
                  position: relative;
                  width: 600px;
                  font-style: italic;
-                 right: 10%;
+                 left: 10%;
              }
         </style>
     </head>
@@ -96,7 +100,7 @@
         
         <div class="bigdiv" data-th-each="book : ${books}" data-th-style="${'background-color:' + book.color}">
             <div class="bookdiv" data-th-classappend="|${bookStat.odd ? 'odd' : ''}${bookStat.even ? 'even' : ''}|">
-                <div class="titlediv" data-th-text="${book.title}" data-th-style="${'color:' + book.fontColor}"   >  </div>
+                <div class="titlediv" data-th-text="${book.title}" data-th-style="${'color:' + book.fontColor}" data-th-classappend="|${bookStat.odd ? 'odd' : ''}${bookStat.even ? 'even' : ''}|">  </div>
                 <div class="infodiv" data-th-classappend="|${bookStat.odd ? 'iodd' : ''}${bookStat.even ? 'ieven' : ''}|">                    
                     <div data-th-text="${book.author}" data-th-style="${'color:' + book.fontColor}">  </div>
                     <div data-th-text="${book.yearPublished}" data-th-style="${'color:' + book.fontColor}">  </div>
