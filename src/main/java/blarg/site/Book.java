@@ -1,10 +1,23 @@
 package blarg.site;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author cymrucoder
  */
-public class Book {
+@Entity
+@Table(name = "books")
+public class Book implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String title;
     private String author;
@@ -59,6 +72,14 @@ public class Book {
 
     public void setQuote(String quote) {
         this.quote = quote;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
 }

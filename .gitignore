@@ -24,3 +24,6 @@ hs_err_pid*
 /target/
 /src/main/resources/static/imgs/
 /pics/
+/src/main/resources/application.properties
+/data.mv.db
+/data.trace.db
