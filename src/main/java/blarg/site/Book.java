@@ -21,8 +21,6 @@ public class Book implements Serializable {
 
     private String title;
     private String author;
-    private String color;
-    private String fontColor;
     private int yearPublished;
     private String quote;
 
@@ -40,22 +38,6 @@ public class Book implements Serializable {
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getFontColor() {
-        return fontColor;
-    }
-
-    public void setFontColor(String fontColor) {
-        this.fontColor = fontColor;
     }
 
     public int getYearPublished() {

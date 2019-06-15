@@ -33,8 +33,15 @@
                 padding: 15px;
                 font-family: "Verdana";
             }
-            .bigdiv {
+            .bigdiv.bodd {
                 height: 120px;
+                background-color: aliceblue;
+                color: #696969;
+             }
+             .bigdiv.beven {
+                height: 120px;
+                background-color: whitesmoke;
+                color: #67809f;
              }
              .bookdiv {
                  font-family: "Verdana";
@@ -67,6 +74,8 @@
                 float: left;
                 
                 text-align: right;
+                background-color: aliceblue;
+                color: #696969;
              }
              .infodiv.ieven {
                  position: relative;
@@ -74,6 +83,8 @@
                 float: right;
                 
                 text-align: left;
+                background-color: whitesmoke;
+                color: #67809f;
              }
              .quotediv.qodd {
                  float: right;
@@ -98,14 +109,14 @@
     <body>
         <h1>Some books I've read</h1>
         
-        <div class="bigdiv" data-th-each="book : ${books}" data-th-style="${'background-color:' + book.color}">
+        <div class="bigdiv" data-th-each="book : ${books}" data-th-classappend="|${bookStat.odd ? 'bodd' : ''}${bookStat.even ? 'beven' : ''}|">
             <div class="bookdiv" data-th-classappend="|${bookStat.odd ? 'odd' : ''}${bookStat.even ? 'even' : ''}|">
-                <div class="titlediv" data-th-text="${book.title}" data-th-style="${'color:' + book.fontColor}" data-th-classappend="|${bookStat.odd ? 'odd' : ''}${bookStat.even ? 'even' : ''}|">  </div>
+                <div class="titlediv" data-th-text="${book.title}" data-th-classappend="|${bookStat.odd ? 'odd' : ''}${bookStat.even ? 'even' : ''}|">  </div>
                 <div class="infodiv" data-th-classappend="|${bookStat.odd ? 'iodd' : ''}${bookStat.even ? 'ieven' : ''}|">                    
-                    <div data-th-text="${book.author}" data-th-style="${'color:' + book.fontColor}">  </div>
-                    <div data-th-text="${book.yearPublished}" data-th-style="${'color:' + book.fontColor}">  </div>
+                    <div data-th-text="${book.author}">  </div>
+                    <div data-th-text="${book.yearPublished}">  </div>
                 </div>
-                <div class="quotediv" data-th-text="${book.quote}" data-th-style="${'color:' + book.fontColor}" data-th-classappend="|${bookStat.odd ? 'qodd' : ''}${bookStat.even ? 'qeven' : ''}|">  </div>
+                <div class="quotediv" data-th-text="${book.quote}" data-th-classappend="|${bookStat.odd ? 'qodd' : ''}${bookStat.even ? 'qeven' : ''}|">  </div>
             </div>
                
         </div>
